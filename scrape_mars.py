@@ -9,23 +9,23 @@ def scrape():
 
     # Activity 1: Retrieve Lastest Mars News Update
     # setup splinter
-    ##executable_path = {'executable_path': ChromeDriverManager().install()}
-    ##browser = Browser('chrome', **executable_path, headless=False)
+    executable_path = {'executable_path': ChromeDriverManager().install()}
+    browser = Browser('chrome', **executable_path, headless=False)
 
     # URL for NASA Mars News
-    ##url = 'https://redplanetscience.com/'
-    ##browser.visit(url)
+    url = 'https://redplanetscience.com/'
+    browser.visit(url)
      
     # HTML object
-    ##html = browser.html
+    html = browser.html
 
     # Parse HTML with Beautiful Soup
-    ##soup = BeautifulSoup(html, 'html.parser')
+    soup = BeautifulSoup(html, 'html.parser')
     #latestnews = soup.find_all('div', class_='list_text')
 
     # Retrieve all elements that contain book information
-    ##marslatest['title']       = soup.find('div', class_='content_title')
-    ##marslatest['paragraph']   = soup.find('div', class_='article_teaser_body')
+    marslatest['title']       = soup.find('div', class_='content_title').get_text()
+    marslatest['paragraph']   = soup.find('div', class_='article_teaser_body').get_text()
 
     #marslatest['title']     = title
     #marslatest["paragraph"] = paragraph

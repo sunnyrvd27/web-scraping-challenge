@@ -11,18 +11,18 @@
 
 <body>
   <div class="container-fluid">
-    <div class="jumbotron text-center">
+    <div class="jumbotron text-center" style="background-color: rgb(128, 214, 240);">
       <h1 style="font-stretch: semi-expanded;font-weight: bolder;font-style: inherit;">Mission to Mars</h1>
-      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button" style="font-style: italic;">Scrape New Data</a></p>
     </div>
   </div>
 
   <div class="container-fluid">
     <div class="row">
         <div class="col-lg-12" style="border-style:outset;">
-          <h2 style="text-align: center; ">Latest Mars News</h2>
-          <h3 style="text-align: center; ">Mars Title</h3>
-          <h4 style="text-align: center; ">Mars Paragraph</h4>
+          <h2 style="text-align: left;font-weight:bolder;font-family: 'Courier New', Courier, monospace; ">Latest Mars News</h2>
+          <h3 style="text-align: left;font-weight: bold; ">{{mars_info.title}}</h3>
+          <h4 style="text-align: left; ">{{mars_info.paragraph}}</h4>
         </div>
     </div>
   </div> 
@@ -32,28 +32,30 @@
         <div class="col-lg-6" style="border-style:outset;">
             <div class="box">
                 <p>
-                    <h2>Featured Mars Image</h2>
+                    <h2 style="font-weight: 900;">Featured Mars Image</h2>
                 </p>
-                <img src="{{ mars_info.featured_image_url }}" style="height: 400px;width: 400px; padding: 10px"
+                <img src="{{ mars_info.featured_image_url }}" style="height: 400px;width: 400px; image-rendering: crisp-edges; padding-bottom: 10px;margin-left: auto;margin-right: auto; display: block" 
                     alt="Featured Image" />
             </div>
         </div>
 
         <div class="col-lg-6">
-            <div class="box" style="border-style:outset;padding: 10px;margin-left: 0px;margin-right: 5px; margin-top: 5px">
+          <div class="box" style="border-style:outset; margin-left: -10px; margin-right: -10px;">
+<!--            <div class="box" style="border-style:outset;padding: 10px;margin-left: 0px;margin-right: 5px; margin-top: 5px"> -->
                 <p>
-                    <h4>Mars Profile:</h4>
+                  <h4 style="padding: 20px; padding-left: 0px; font-weight: 500;">Mars Facts:</h4>
                     {{ mars_info.html_profile_table|safe }}
                 </p>
-            </div>
+<!--            </div> -->
             </br></br>
 
-            <div class="box" style="border-style: solid;padding: 10px;margin-left: 0px;margin-right: 5px">
+<!--            <div class="box" style="border-style: solid;padding: 10px;margin-left: 0px;margin-right: 5px"> -->
               <p>
-                <h4 style="padding: 10px; padding-left: 0px">Mars Earth Comparision:</h4>
-                {{ mars_info.html_comp_table|safe }}
+                <h4 style="padding: 20px; padding-left: 0px; font-weight: 500;">Mars - Earth Comparision:</h4>
+                  {{ mars_info.html_comp_table|safe }}
               </p>
-            </div>
+<!--            </div> -->
+          </div>
         </div>
     </div>
 </div>
@@ -62,7 +64,7 @@
   <div class="container-fluid" style="padding: 20px">
     <div class="row">
         <div>
-            <h3 style="text-align: center; padding: 20px">Mars Hemispheres</h3>
+            <h3 style="text-align: center; padding: 10px">Mars Hemispheres</h3>
             <hr>
         </div>
     </div>
